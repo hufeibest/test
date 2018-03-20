@@ -39,7 +39,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    hufei: '/src.js'
+    hufei: '/app/index.html',
   },
 
   output: {

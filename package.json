@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack"
+    "start": "webpack",
+    "server": "webpack-dev-server --open"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,8 @@
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
-    "webpack": "^4.1.1"
+    "webpack": "^4.1.1",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }
