@@ -1,4 +1,5 @@
 import x from './hg.js'
+import { resolve } from 'path';
 let a = [
     {a:2,da:false},
     {a:'dasd',da:false},
@@ -89,4 +90,52 @@ let arr2 =  [...str];
 function* gg() {
     yield* 'dasddasd';
 }
-console.log(gg().next());
+// console.log(gg().next());
+// console.log(new XMLHttpRequest());
+
+// function time (resolve,reject) {
+//     let i =12;
+//     setTimeout(()={
+//         if (i > 0) {
+//             resolve(true);
+//         } else {
+//             reject(false)
+//         }
+//     })
+// }
+function* pro() {
+    // let xhr = new XMLHttpRequest()
+    let x = new Promise(function(resolve, reject) {
+        let i =12;
+        setTimeout(function(){
+            if (i > 0) {
+                resolve(true);
+            } else {
+                reject(false)
+            }
+        })
+    });
+    // console.log(x);
+    yield x
+}
+ let pr = pro();
+ let n = pr.next();
+//  console.log(n);
+ n.value.then(()=>{
+    //  console.log('daushd');
+ })
+// console.log(po.next());
+
+function timeout(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
+  }
+  
+  async function asyncPrint(value, ms) {
+    await timeout(ms);
+    console.log(value);
+  }
+  
+
+  asyncPrint('hello world', 3000);
