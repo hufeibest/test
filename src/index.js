@@ -139,3 +139,42 @@ function timeout(ms) {
   
 
   asyncPrint('hello world', 3000);
+ let setARR = [
+   {d:'14'},
+   {d:'14'}
+ ]
+let da = [...setARR];
+// console.log(da);
+
+// console.log(...new Set([1,2,1,2,1,5,4,8]))
+
+arr = {
+  0:0,
+  1:1,
+  length:100
+}
+// console.log(Array.from(arr,(i, j )=> {
+//   return j
+// }));
+
+arr = new Map();
+let obj1 = {};
+let obj2 = obj1;
+arr.set(obj2,4687979)
+arr.set(obj1,'sdas');
+arr.set(obj1,'46468')
+// console.log(JSON.stringify(arr))
+// console.log([...arr]);
+
+arr = new Proxy({},{
+  get: function(item,value) {
+    console.log(item)
+    console.log(this)
+    return this
+  },
+  construct: function() {
+    return this
+  }
+})
+let eqwe = Object.create(arr);
+console.log(eqwe.ds);
