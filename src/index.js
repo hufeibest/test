@@ -6,29 +6,32 @@ let a = [
 ];
 let ww = 'hufei';
 let item = ww[Symbol.iterator]();
+console.log(ww);
 // console.log(item.next());
 // console.log(item.next());
 // console.log(item.next());
 
 class xx extends x{
     constructor(name,age){
-        super(name);
+        super(name, age);
         this.age = age;
         // console.log(this.name);
         // console.log(this.age);
     }
-    *[Symbol.iterator](){
-        let x = 12;
-        yield x;
-        // for (let i in this) {
-            // console.log(i);
-        //     yield i;
-        // }
-    }
+    // *[Symbol.iterator](){
+    //     let x = 12;
+    //     yield x;
+    //     // for (let i in this) {
+    //         // console.log(i);
+    //     //     yield i;
+    //     // }
+    // }
     static mm (){
         // console.log('sas');
     }
 }
+let tt = new xx('hufei', 12);
+console.log(tt);
 var xy = 12;
 function* qq(){
     // console.log('hadiha')
@@ -46,11 +49,11 @@ function* qq(){
 
 
 // xx.mm();
-let hh = new xx('hufe',15);
+// let hh = new xx('hufe',15);
 // console.log(hh);
-for (let w of hh) {
+// for (let w of hh) {
     // console.log(w);
-}
+// }
 let obj = {
     0:4,
     1:45,
@@ -166,15 +169,39 @@ arr.set(obj1,'46468')
 // console.log(JSON.stringify(arr))
 // console.log([...arr]);
 
-arr = new Proxy({},{
+let arrw = new Proxy({
+  xixi:function(){
+    return 'wwww'
+  }
+},{
+  // xixi:function(){
+  //   return '456879'
+  // },
   get: function(item,value) {
     console.log(item)
     console.log(this)
-    return this
+    return item
   },
   construct: function() {
     return this
+  },
+  apply: function(){
+    return 'dasda'
   }
 })
-let eqwe = Object.create(arr);
-console.log(eqwe.ds);
+
+console.log(arrw.das.xixi())
+// let eqwe = Object.create(arr);
+// console.log(eqwe.ds);
+
+arr = function(){
+  return "this is a target"
+}
+let handler = {
+  apply: function(target, cex, args) {
+    return "this is a proxy"
+  }
+}
+
+a = new Proxy(arr, handler);
+console.log(a())
