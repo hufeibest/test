@@ -69,7 +69,7 @@ let arr = [...str];
 // console.log(arr);
 str[Symbol.iterator] = function() {
     return {
-        next: function () {
+        next () {
             if(this.first){
                 this.first = false;
                 return { value: '45', done: false};
@@ -77,6 +77,9 @@ str[Symbol.iterator] = function() {
                 return {done: true}
             }
             
+        },
+        return (){
+            return {done:false};
         },
         first: true,
     }
