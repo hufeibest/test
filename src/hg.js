@@ -1,4 +1,4 @@
-class xx {
+class sa {
     constructor(name) {
         // super();
         this.name = name;
