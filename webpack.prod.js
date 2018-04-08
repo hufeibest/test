@@ -1,3 +1,5 @@
+import { HistoricalScheduler } from 'rx';
+
 const webpack = require('webpack')
 const path = require('path')
 
@@ -41,13 +43,17 @@ module.exports = {
   entry: {
     hufei: '/app/index.html',
   },
-
+  devtool: 'eval-source-map',
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'build')
   },
-
+  devServer:{
+    content: './index.html',
+    historyApiFailback: true,
+    inline: true
+  },
   module: {
     rules: [{
       test: /\.js$/,

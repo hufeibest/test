@@ -6,7 +6,7 @@ let a = [
 ];
 let ww = 'hufei';
 let item = ww[Symbol.iterator]();
-console.log(ww);
+// console.log(ww);
 // console.log(item.next());
 // console.log(item.next());
 // console.log(item.next());
@@ -30,8 +30,8 @@ class xx extends x{
         // console.log('sas');
     }
 }
-let tt = new xx('hufei', 12);
-console.log(tt);
+// let tt = new xx('hufei', 12);
+// console.log(tt);
 var xy = 12;
 function* qq(){
     // console.log('hadiha')
@@ -234,5 +234,11 @@ let handler = {
   }
 }
 
-a = new Proxy(arr, handler);
-console.log(a())
+// a = new Proxy(arr, handler);
+// console.log(a())
+function ee(){
+    let a = 12;
+    let b = 13;
+    return a,b
+}
+console.log(ee());
