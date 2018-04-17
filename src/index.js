@@ -15,8 +15,8 @@ class xx extends x{
     constructor(name,age){
         super(name, age);
         this.age = age;
-        // console.log(this.name);
-        // console.log(this.age);
+        console.log(this.name);
+        console.log(this.age);
     }
     // *[Symbol.iterator](){
     //     let x = 12;
@@ -27,11 +27,41 @@ class xx extends x{
     //     // }
     // }
     static mm (){
-        // console.log('sas');
+        console.log('sas');
     }
 }
 let tt = new xx('hufei', 12);
 console.log(tt);
+class yy extends x {
+  constructor(name,man){
+    super(name)
+    this.man = man;
+  }
+  ma(){
+    console.log('zhenglamei')
+  }
+}
+let mm = new yy('lamei', 'woman');
+console.log(mm);
+class  rr extends  yy{
+  constructor(name,age){
+    super(name,'bigwomen')
+    this.ag = age
+    console.log(super.man)
+  }
+  getMan (){
+    // super.ma()
+    console.log(this);
+    // console.log(this);
+    return this.man
+  }
+  ma(){
+    console.log('hufei')
+  }
+}
+let RR = new rr('zheng', 'dadsasdasdasd')
+console.log(RR);
+console.log(RR.getMan())
 var xy = 12;
 function* qq(){
     // console.log('hadiha')

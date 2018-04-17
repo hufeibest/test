@@ -8,4 +8,4 @@ class sa {
         console.log(this.name);
     }
 }
-export default xx;
+export default sa;
