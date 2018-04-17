@@ -8,7 +8,7 @@
     "start": "webpack",
     "server": "webpack-dev-server --open"
   },
-  "author": "",
+  "author": "hufei",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
